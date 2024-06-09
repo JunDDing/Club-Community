@@ -1,0 +1,21 @@
+.App {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px;
+    padding: 20px;
+}
+.left, .right {
+    flex: 1;
+    padding: 10px;
+}
+.section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
