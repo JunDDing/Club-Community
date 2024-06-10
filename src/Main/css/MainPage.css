@@ -1,0 +1,79 @@
+.MainPage {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.club-search,
+.club-event,
+.club-video,
+.club-photo {
+  width: 16rem;
+  height: 4rem;
+  font-size: 2rem;
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: #d9d9d9;
+}
+.club-search,
+.club-event,
+.club-video,
+.club-photo:hover {
+  cursor: pointer;
+}
+
+.club-noticeboard {
+  display: flex;
+  flex-direction: row;
+  margin: 20px auto;
+}
+
+.club-event-notice-box {
+  margin-right: 15px;
+}
+.club-recruit-board-box {
+  margin-left: 15px;
+}
+.club-event-notice-box,
+.club-recruit-board-box {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.club-event-notice,
+.club-recruit-board {
+  width: 31rem;
+  height: 31rem;
+  border: 2px solid black;
+}
+
+.activity-photos {
+  margin: 0 auto;
+}
+.activity-videos {
+  margin: 0 auto;
+}
+.activity-photos-text,
+.activity-videos-text {
+  display: block;
+  font-size: 2rem;
+}
+
+.activity-photos-box,
+.activity-videos-box {
+  display: flex;
+  flex-direction: row;
+}
+.activity-photo,
+.activity-video {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  margin: 0 50px;
+}
