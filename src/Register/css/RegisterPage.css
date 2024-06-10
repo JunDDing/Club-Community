@@ -1,0 +1,35 @@
+.RegisterPage {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: black;
+  font-size: 36px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.inputEmail,
+.inputTel {
+  width: 318px;
+  height: 57px;
+  border: 2px solid;
+  font-size: 36px;
+}
+
+/* 버튼 */
+.btn-box {
+  display: flex;
+  justify-content: center;
+}
+.RegisterBtn {
+  width: 47%;
+  text-align: center;
+  color: black;
+  font-size: 32px;
+}
+
+.RegisterBtn:hover {
+  cursor: pointer;
+}
