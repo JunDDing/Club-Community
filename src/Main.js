@@ -6,13 +6,13 @@ function Main() {
        <div class="content">
             <div class="left">
                 <div class="section">
-                    <h2>동아리 행사 공지</h2>
+                    <h2>동아리 행사 공지 sdgsdgsdgf</h2>
                 
                 </div>
             </div>
             <div class="right">
                 <div class="section">
-                    <h2>부원 모집 게시판</h2>
+                    <h2>부원 모집 게시판sdgsdgsd</h2>
             
                 </div>
             </div>
