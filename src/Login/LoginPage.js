@@ -1,6 +1,7 @@
 import "./css/LoginPage.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { KAKAO_AUTH_URL } from "./utils/OAuth.js";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ function LoginPage() {
   };
 
   const goRegisterPage = () => {
-    navigate("/signup");
+    navigate("/register");
   };
 
   const onClickLogin = () => {};
@@ -42,6 +43,12 @@ function LoginPage() {
           <button className="LoginBtn" onClick={onClickLogin}>
             로그인
           </button>
+          <a href={KAKAO_AUTH_URL} className="Kakao-Login-Btn">
+            <img
+              src={process.env.PUBLIC_URL + "/img/kakao_login_medium_wide.png"}
+              alt="kakao-login"
+            />
+          </a>
           <button className="goRegisterPageBtn" onClick={goRegisterPage}>
             회원가입
           </button>

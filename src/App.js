@@ -3,6 +3,7 @@ import "./App.css";
 import MainPage from "./Main/MainPage";
 import LoginPage from "./Login/LoginPage";
 import RegisterPage from "./Register/RegisterPage";
+import LoginHandler from "./Login/components/LoginHandler";
 
 function App() {
   const links = [
@@ -14,6 +15,10 @@ function App() {
     {
       path: "/register",
       element: <RegisterPage />,
+    },
+    {
+      path: "/api/callback",
+      element: <LoginHandler />,
     },
   ];
 
