@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.register-page-container {
+  margin: 50px auto;
+}
+
 label {
   color: black;
   font-size: 36px;
@@ -11,11 +15,23 @@ label {
 }
 
 .inputEmail,
+.inputPw,
+.inputName,
+.inputBirth,
+.inputDepartment,
+.inputCode,
 .inputTel {
-  width: 318px;
+  width: 500px;
   height: 57px;
   border: 2px solid;
   font-size: 36px;
+  font-family: sans-serif;
+}
+
+.inputGender {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
 }
 
 /* 버튼 */
