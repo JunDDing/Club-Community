@@ -1,5 +1,5 @@
 import "./css/RegisterPage.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -17,6 +17,44 @@ function RegisterPage() {
     phoneNumber: "",
   });
 
+  const [disabledFields, setDisabledFields] = useState({
+    email: false,
+    name: false,
+    birth: false,
+    gender: false,
+    phoneNumber: false,
+  });
+
+  useEffect(() => {
+    const email = sessionStorage.getItem("email") || "";
+    const name = sessionStorage.getItem("name") || "";
+    const birthyear = sessionStorage.getItem("birthyear") || "";
+    const birthday = sessionStorage.getItem("birthday") || "";
+    const birth =
+      birthyear && birthday
+        ? `${birthyear}-${birthday.slice(0, 2)}-${birthday.slice(2, 4)}`
+        : "";
+    const gender = sessionStorage.getItem("gender") || "MALE";
+    const phoneNumber = sessionStorage.getItem("phoneNumber") || "";
+
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      email,
+      name,
+      birth,
+      gender,
+      phoneNumber,
+    }));
+
+    setDisabledFields({
+      email: !!email, // !! 연산자는 해당 값이 존재하는지 여부를 true/false로 반환
+      name: !!name, // 해당 변수 존재 시 -> true
+      birth: !!birth, // 해당 변수가 null, undefined, 빈 문자열(""), 숫자 0 등 일 경우 -> false
+      gender: !!gender,
+      phoneNumber: !!phoneNumber,
+    });
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs({
@@ -32,9 +70,10 @@ function RegisterPage() {
       data: inputs,
     })
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         alert("회원가입 성공");
-        navigate("/");
+        sessionStorage.clear();
+        navigate("/login");
       })
       .catch((error) => {
         console.error("회원가입 에러 " + error);
@@ -54,6 +93,7 @@ function RegisterPage() {
             className="inputEmail"
             value={inputs.email}
             onChange={handleChange}
+            disabled={disabledFields.email}
           />
         </div>
         <div className="input-box">
@@ -74,6 +114,7 @@ function RegisterPage() {
             className="inputName"
             value={inputs.name}
             onChange={handleChange}
+            disabled={disabledFields.name}
           />
         </div>
         <div className="input-box">
@@ -84,6 +125,7 @@ function RegisterPage() {
             className="inputBirth"
             value={inputs.birth}
             onChange={handleChange}
+            disabled={disabledFields.birth}
           />
         </div>
         <div className="input-box">
@@ -96,6 +138,7 @@ function RegisterPage() {
               defaultChecked
               onChange={handleChange}
               className="inputGender"
+              disabled={disabledFields.gender}
             />
             남
           </label>
@@ -106,6 +149,7 @@ function RegisterPage() {
               value="FEMALE"
               onChange={handleChange}
               className="inputGender"
+              disabled={disabledFields.gender}
             />
             여
           </label>
@@ -148,6 +192,7 @@ function RegisterPage() {
             className="inputTel"
             value={inputs.phoneNumber}
             onChange={handleChange}
+            disabled={disabledFields.phoneNumber}
           />
         </div>
         <div className="btn-box">

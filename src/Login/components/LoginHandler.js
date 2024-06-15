@@ -1,3 +1,4 @@
+import "../css/LoginHandler.css";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -16,7 +17,14 @@ const LoginHandler = () => {
     })
       .then((res) => {
         console.log(res);
-        localStorage.setItem("name", res.data.kakao_account.name);
+        const { email, birthday, birthyear, gender, name, phone_number } =
+          res.data.kakao_account;
+        sessionStorage.setItem("email", email);
+        sessionStorage.setItem("birthday", birthday);
+        sessionStorage.setItem("birthyear", birthyear);
+        sessionStorage.setItem("gender", gender.toUpperCase());
+        sessionStorage.setItem("name", name);
+        sessionStorage.setItem("phoneNumber", phone_number);
         navigate("/register");
       })
       .catch((error) => {
@@ -33,7 +41,7 @@ const LoginHandler = () => {
 
   return (
     <div className="LoginHandler">
-      <div className="">로그인 중...</div>
+      <div className="login-message">로그인 중...</div>
     </div>
   );
 };
