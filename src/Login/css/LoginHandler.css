@@ -1,0 +1,9 @@
+.LoginHandler {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-message {
+  margin: 15% auto;
+  font-size: 100px;
+}
