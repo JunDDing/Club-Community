@@ -1,8 +1,10 @@
 import "./css/MainPage.css";
+import TopHeader from "../etc/components/TopHeader";
 
 function MainPage() {
   return (
     <div className="MainPage">
+      <TopHeader />
       <div className="Header">
         <button className="club-search">동아리 조회</button>
         <button className="club-event">동아리 행사</button>
