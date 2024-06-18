@@ -4,6 +4,9 @@ import MainPage from "./Main/MainPage";
 import LoginPage from "./Login/LoginPage";
 import RegisterPage from "./Register/RegisterPage";
 import LoginHandler from "./Login/components/LoginHandler";
+import AdminPage from "./Admin/AdminPage";
+import AdminClubMgmtPage from "./Admin/AdminClubMgmtPage";
+import ClubApplicationPage from "./Club/ClubApplicationPage";
 
 function App() {
   const links = [
@@ -19,6 +22,18 @@ function App() {
     {
       path: "/api/callback",
       element: <LoginHandler />,
+    },
+    {
+      path: "/admin",
+      element: <AdminPage />,
+    },
+    {
+      path: "/admin/application/club/list",
+      element: <AdminClubMgmtPage />,
+    },
+    {
+      path: "/club/application",
+      element: <ClubApplicationPage />,
     },
   ];
 
