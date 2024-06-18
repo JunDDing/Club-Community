@@ -1,0 +1,13 @@
+.TextEditor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ck.ck-editor {
+  width: 70%;
+}
+
+.cke_editor_editor .cke_contents {
+  min-height: 550px;
+}
