@@ -32,6 +32,7 @@ function LoginPage() {
     })
       .then((res) => {
         console.log(res.data);
+        sessionStorage.setItem("isAdmin", res.data.isAdmin);
         alert("로그인 성공");
         navigate("/");
       })
