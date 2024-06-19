@@ -19,7 +19,7 @@ function TopHeader() {
   return (
     <div className="TopHeader">
       <header>
-        <button onClick={goAdminPage}>관리자 메뉴</button>
+        <button onClick={goAdminPage}>시스템 관리자 메뉴</button>
         <button onClick={goClubApplicationPage}>동아리 신청</button>
         <button onClick={goLoginPage}>로그인</button>
       </header>
