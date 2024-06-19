@@ -141,7 +141,7 @@ function ClubApplicationPage() {
           />
         </div>
         <div className="input-box">
-          <label className="labelProfPhoneNumber">파일</label>
+          <label className="labelProfPhoneNumber">사진</label>
           <input type="file" name="mainPicture" onChange={handleFileChange} />
         </div>
         <div className="btn-box">
