@@ -1,0 +1,21 @@
+.ClubInfoEditPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.club-info-edit-container {
+  margin: 50px auto;
+}
+
+.inputClubName,
+.inputIntroduction,
+.inputHistory,
+.inputMeetingTime,
+.inputSubMasterEmail,
+.inputAffairEmail {
+  width: 500px;
+  height: 57px;
+  border: 2px solid;
+  font-size: 36px;
+  font-family: sans-serif;
+}
