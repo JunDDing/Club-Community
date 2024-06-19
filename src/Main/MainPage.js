@@ -1,12 +1,20 @@
 import "./css/MainPage.css";
 import TopHeader from "../etc/components/TopHeader";
+import { useNavigate } from "react-router-dom";
 
 function MainPage() {
+  const navigate = useNavigate();
+
+  const goClubListPage = () => {
+    navigate("/club/list");
+  };
   return (
     <div className="MainPage">
       <TopHeader />
       <div className="Header">
-        <button className="club-search">동아리 조회</button>
+        <button onClick={goClubListPage} className="club-search">
+          동아리 조회
+        </button>
         <button className="club-event">동아리 행사</button>
         <button className="club-video">동영상</button>
         <button className="club-photo">사진</button>
