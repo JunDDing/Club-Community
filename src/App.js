@@ -7,6 +7,7 @@ import LoginHandler from "./Login/components/LoginHandler";
 import AdminPage from "./Admin/AdminPage";
 import AdminClubMgmtPage from "./Admin/AdminClubMgmtPage";
 import ClubApplicationPage from "./Club/ClubApplicationPage";
+import ApplicationClubRejectPage from "./Admin/ApplicationClubRejectPage";
 
 function App() {
   const links = [
@@ -34,6 +35,10 @@ function App() {
     {
       path: "/club/application",
       element: <ClubApplicationPage />,
+    },
+    {
+      path: "/admin/application/club/reject/:applicationId",
+      element: <ApplicationClubRejectPage />,
     },
   ];
 
