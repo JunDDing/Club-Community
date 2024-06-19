@@ -1,0 +1,42 @@
+.ClubApplicationPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.club-application-container {
+  margin: 50px auto;
+}
+
+label {
+  color: black;
+  font-size: 36px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.inputProfName,
+.inputProfDepartment,
+.inputProfPhoneNumber {
+  width: 500px;
+  height: 57px;
+  border: 2px solid;
+  font-size: 36px;
+  font-family: sans-serif;
+}
+
+.inputClubType {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.submit-btn {
+  width: 47%;
+  text-align: center;
+  color: black;
+  font-size: 32px;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.ApplicationClubRejectPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ApplicationClubRejectPage > div {
+  text-align: center;
+}
+
+.reject-reason-heading {
+  text-align: center;
+}
+
+.submit {
+  display: inline-block;
+  margin-top: 20px;
+  width: 300px;
+  text-align: center;
+  color: black;
+  font-size: 32px;
+}
