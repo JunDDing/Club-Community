@@ -1,0 +1,8 @@
+.ClubApplyPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.club-application-container {
+  margin: 50px auto;
+}
