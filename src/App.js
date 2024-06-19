@@ -8,6 +8,13 @@ import AdminPage from "./Admin/AdminPage";
 import AdminClubMgmtPage from "./Admin/AdminClubMgmtPage";
 import ClubApplicationPage from "./Club/ClubApplicationPage";
 import ApplicationClubRejectPage from "./Admin/ApplicationClubRejectPage";
+import MasterClubMgmtPage from "./Club/MasterClubMgmtPage";
+import ClubInfoEditPage from "./Club/ClubInfoEditPage";
+import ClubMemberInfoPage from "./Club/ClubMemberInfoPage";
+import ClubMemberApplicationPage from "./Club/ClubMemberApplicationPage";
+import ClubListPage from "./Club/ClubListPage";
+import ClubDetailPage from "./Club/ClubDetailPage";
+import ClubApplyPage from "./Club/ClubApplyPage";
 
 function App() {
   const links = [
@@ -39,6 +46,34 @@ function App() {
     {
       path: "/admin/application/club/reject/:applicationId",
       element: <ApplicationClubRejectPage />,
+    },
+    {
+      path: "/master/club/info",
+      element: <MasterClubMgmtPage />,
+    },
+    {
+      path: "/master/club/info/edit",
+      element: <ClubInfoEditPage />,
+    },
+    {
+      path: "/master/club/info/member",
+      element: <ClubMemberInfoPage />,
+    },
+    {
+      path: "/master/club/info/application",
+      element: <ClubMemberApplicationPage />,
+    },
+    {
+      path: "/club/list",
+      element: <ClubListPage />,
+    },
+    {
+      path: "/club/detail/:clubId",
+      element: <ClubDetailPage />,
+    },
+    {
+      path: "/club/application/:clubId", // 일반 회원 동아리 가입 신청
+      element: <ClubApplyPage />,
     },
   ];
 
