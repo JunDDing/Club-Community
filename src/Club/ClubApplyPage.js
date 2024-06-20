@@ -1,5 +1,5 @@
 import "./css/ClubApplyPage.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "../etc/utils/apis";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -8,6 +8,7 @@ function ClubApplyPage() {
   const navigate = useNavigate();
   const { clubId } = useParams();
 
+  const [fileName, setFileName] = useState("");
   const [file, setFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -39,7 +40,21 @@ function ClubApplyPage() {
     }
   };
 
-  const downloadApplication = async (clubId) => {
+  const getFileName = async (clubId) => {
+    try {
+      const res = await axios({
+        method: "GET",
+        url: `http://localhost:8080/api/club/detail/${clubId}`,
+      });
+      console.log(res.data);
+      setFileName(res.data.applicationName);
+    } catch (error) {
+      console.error(error);
+      alert("파일이 존재하지 않습니다.");
+    }
+  };
+
+  const downloadApplication = async (clubId, fileName) => {
     try {
       const res = await axios({
         method: "GET",
@@ -54,7 +69,7 @@ function ClubApplyPage() {
       // 링크 생성 및 클릭하여 다운로드
       const link = document.createElement("a");
       link.href = url;
-      link.setAttribute("download", "가입 신청서.hwp"); // 파일 이름 설정
+      link.setAttribute("download", fileName); // 파일 이름 설정
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -63,6 +78,10 @@ function ClubApplyPage() {
       alert("파일이 존재하지 않습니다.");
     }
   };
+
+  useEffect(() => {
+    getFileName(clubId);
+  }, [clubId]);
 
   return (
     <div className="ClubApplyPage">
@@ -87,7 +106,7 @@ function ClubApplyPage() {
             name="applicationFile"
             onChange={handleFileChange}
           />
-          <button onClick={() => downloadApplication(clubId)}>
+          <button onClick={() => downloadApplication(clubId, fileName)}>
             가입 신청서 다운로드
           </button>
         </div>
